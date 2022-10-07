@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRSample", "MediatRSample\MediatRSample.csproj", "{CE3CBCDC-4654-4E6A-BE80-93422A6BC46E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatRSample.BusinessLayer", "MediatRSample.BusinessLayer\MediatRSample.BusinessLayer.csproj", "{05AF65DF-8F48-4834-A063-A0608631700D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE3CBCDC-4654-4E6A-BE80-93422A6BC46E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3CBCDC-4654-4E6A-BE80-93422A6BC46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3CBCDC-4654-4E6A-BE80-93422A6BC46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3CBCDC-4654-4E6A-BE80-93422A6BC46E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05AF65DF-8F48-4834-A063-A0608631700D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AF65DF-8F48-4834-A063-A0608631700D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AF65DF-8F48-4834-A063-A0608631700D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AF65DF-8F48-4834-A063-A0608631700D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F586F88-0C59-4ABB-A28D-67A16D37DC79}
+	EndGlobalSection
+EndGlobal
