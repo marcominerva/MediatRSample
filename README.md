@@ -1,2 +1,2 @@
 # MediatR Sample
-A collection of samples about using [MediatR](https://www.google.com) in a Web API application
+A collection of samples about using [MediatR](https://github.com/jbogard/MediatR) in a Web API application
