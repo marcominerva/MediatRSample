@@ -1,4 +1,3 @@
-using MediatR;
 using MediatRSample.BusinessLayer.Handlers;
 using MediatRSample.BusinessLayer.Services;
 using OperationResults.AspNetCore;
@@ -17,7 +16,10 @@ builder.Services.AddOperationResult();
 
 builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 
-builder.Services.AddMediatR(typeof(InvoiceRequestHandler).Assembly);
+builder.Services.AddMediatR(options =>
+{
+    _ = options.RegisterServicesFromAssemblyContaining<InvoiceRequestHandler>();
+});
 
 var app = builder.Build();
 
