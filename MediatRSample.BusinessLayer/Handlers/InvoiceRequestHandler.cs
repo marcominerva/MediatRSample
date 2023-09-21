@@ -7,7 +7,7 @@ using OperationResults;
 
 namespace MediatRSample.BusinessLayer.Handlers;
 
-public class InvoiceRequestHandler : IRequestHandler<InvoiceRequest, Result<Invoice>>, IRequestExceptionHandler<InvoiceRequest, Result<Invoice>>
+public class InvoiceRequestHandler : IRequestHandler<InvoiceRequest, Result<Invoice>>, IRequestExceptionHandler<InvoiceRequest, Result<Invoice>, Exception>
 {
     private readonly IInvoiceService invoiceService;
     private readonly ILogger<InvoiceRequestHandler> logger;

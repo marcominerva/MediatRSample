@@ -17,9 +17,16 @@ public class InvoiceNotificationHandler : INotificationHandler<InvoiceNotificati
     {
         logger.LogInformation("Starting {Handler} for Invoice {Id}...", nameof(InvoiceNotificationHandler), notification.Id);
 
-        await Task.Delay(3000);
+        try
+        {
+            await Task.Delay(3000, cancellationToken);
 
-        logger.LogInformation("{Handler} ended for Invoice {Id}.", nameof(InvoiceNotificationHandler), notification.Id);
+            logger.LogInformation("{Handler} ended for Invoice {Id}.", nameof(InvoiceNotificationHandler), notification.Id);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Error in {Handler} for Invoice {Id}.", nameof(InvoiceNotificationHandler), notification.Id);
+        }
     }
 }
 
@@ -36,9 +43,15 @@ public class InvoiceNotificationHandler2 : INotificationHandler<InvoiceNotificat
     {
         logger.LogInformation("Starting {Handler} for Invoice {Id}...", nameof(InvoiceNotificationHandler2), notification.Id);
 
-        await Task.Delay(3000);
+        try
+        {
+            await Task.Delay(3000, cancellationToken);
 
-        logger.LogInformation("{Handler} ended for Invoice {Id}.", nameof(InvoiceNotificationHandler2), notification.Id);
-
+            logger.LogInformation("{Handler} ended for Invoice {Id}.", nameof(InvoiceNotificationHandler2), notification.Id);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Error in {Handler} for Invoice {Id}.", nameof(InvoiceNotificationHandler), notification.Id);
+        }
     }
 }
