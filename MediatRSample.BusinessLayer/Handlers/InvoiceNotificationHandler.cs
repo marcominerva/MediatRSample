@@ -1,13 +1,15 @@
 ﻿using MediatR;
 using MediatRSample.BusinessLayer.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
 namespace MediatRSample.BusinessLayer.Handlers;
 
-public class InvoiceNotificationHandler(ILogger<InvoiceNotificationHandler> logger) : INotificationHandler<InvoiceNotification>
+public class InvoiceNotificationHandler(IHttpContextAccessor httpContextAccessor, ILogger<InvoiceNotificationHandler> logger) : INotificationHandler<InvoiceNotification>
 {
     public async Task Handle(InvoiceNotification notification, CancellationToken cancellationToken)
     {
+        var httpContext = httpContextAccessor.HttpContext;
         logger.LogInformation("Starting {Handler} for Invoice {Id}...", nameof(InvoiceNotificationHandler), notification.Id);
 
         try
