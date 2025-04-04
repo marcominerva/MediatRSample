@@ -9,15 +9,8 @@ namespace MediatRSample.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 [Produces(MediaTypeNames.Application.Json)]
-public class InvoicesController : ControllerBase
+public class InvoicesController(IMediator mediator) : ControllerBase
 {
-    private readonly IMediator mediator;
-
-    public InvoicesController(IMediator mediator)
-    {
-        this.mediator = mediator;
-    }
-
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Invoice))]
     [ProducesDefaultResponseType]

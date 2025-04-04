@@ -7,17 +7,8 @@ using OperationResults;
 
 namespace MediatRSample.BusinessLayer.Handlers;
 
-public class InvoiceRequestHandler : IRequestHandler<InvoiceRequest, Result<Invoice>>, IRequestExceptionHandler<InvoiceRequest, Result<Invoice>, Exception>
+public class InvoiceRequestHandler(IInvoiceService invoiceService, ILogger<InvoiceRequestHandler> logger) : IRequestHandler<InvoiceRequest, Result<Invoice>>, IRequestExceptionHandler<InvoiceRequest, Result<Invoice>, Exception>
 {
-    private readonly IInvoiceService invoiceService;
-    private readonly ILogger<InvoiceRequestHandler> logger;
-
-    public InvoiceRequestHandler(IInvoiceService invoiceService, ILogger<InvoiceRequestHandler> logger)
-    {
-        this.invoiceService = invoiceService;
-        this.logger = logger;
-    }
-
     public async Task<Result<Invoice>> Handle(InvoiceRequest request, CancellationToken cancellationToken)
     {
         logger.LogInformation("{Handler} called. ", nameof(InvoiceRequestHandler));
